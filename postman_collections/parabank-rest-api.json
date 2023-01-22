@@ -1,0 +1,2702 @@
+{
+  "info": {
+    "_postman_id": "102ecf0e-f201-409d-9233-c79cad4eacea",
+    "name": "The ParaBank REST API",
+    "description": "This API provides access to various ParaBank internal operations\n\nContact Support:\n Name: ParaBank Web Administrator\n Email: webadmin@parabank.parasoft.com",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "6160806"
+  },
+  "item": [
+    {
+      "name": "setup",
+      "item": [
+        {
+          "name": "Stop JMS Listener",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response is 204\", function() {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/shutdownJmsListener",
+              "host": ["{{baseUrl}}"],
+              "path": ["shutdownJmsListener"]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/shutdownJmsListener",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["shutdownJmsListener"]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Start JMS Listener",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response is 204\", function() {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/startupJmsListener",
+              "host": ["{{baseUrl}}"],
+              "path": ["startupJmsListener"]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/startupJmsListener",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["startupJmsListener"]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Clean the Database",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response is 204\", function() {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/cleanDB",
+              "host": ["{{baseUrl}}"],
+              "path": ["cleanDB"]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/cleanDB",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["cleanDB"]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Initialize the Database",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response is 204\", function() {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/initializeDB",
+              "host": ["{{baseUrl}}"],
+              "path": ["initializeDB"]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/initializeDB",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["initializeDB"]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        },
+        {
+          "name": "Set Parameters",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response is 204\", function() {",
+                  "    pm.response.to.have.status(204);",
+                  "});"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/setParameter/:name/:value",
+              "host": ["{{baseUrl}}"],
+              "path": ["setParameter", ":name", ":value"],
+              "variable": [
+                {
+                  "key": "name",
+                  "value": "{{$randomProduct}}",
+                  "description": "(Required) Parameter Name"
+                },
+                {
+                  "key": "value",
+                  "value": "{{$randomBankAccount}}",
+                  "description": "(Required) Parameter Value"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/setParameter/:name/:value",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["setParameter", ":name", ":value"],
+                  "variable": [
+                    {
+                      "key": "name",
+                      "value": "in",
+                      "description": "(Required) Parameter Name"
+                    },
+                    {
+                      "key": "value",
+                      "value": "in",
+                      "description": "(Required) Parameter Value"
+                    }
+                  ]
+                }
+              },
+              "status": "Internal Server Error",
+              "code": 500,
+              "_postman_previewlanguage": "text",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "cookie": [],
+              "body": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "login",
+      "item": [
+        {
+          "name": "Login (john/demo)",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Login should be successful\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response must be valid\", function(){\r",
+                  "    pm.response.to.be.ok;\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/login/:username/:password",
+              "host": ["{{baseUrl}}"],
+              "path": ["login", ":username", ":password"],
+              "variable": [
+                {
+                  "key": "username",
+                  "value": "john",
+                  "description": "(Required) Customer's user name"
+                },
+                {
+                  "key": "password",
+                  "value": "demo",
+                  "description": "(Required) Customer's password"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/login/:username/:password",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["login", ":username", ":password"],
+                  "variable": [
+                    {
+                      "key": "username",
+                      "value": "in",
+                      "description": "(Required) Customer's user name"
+                    },
+                    {
+                      "key": "password",
+                      "value": "in",
+                      "description": "(Required) Customer's password"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": -38793593,\n  \"firstName\": \"adipisicing velit\",\n  \"lastName\": \"adipisicing consectetur do \",\n  \"address\": {\n    \"street\": \"cillum incididunt nulla in\",\n    \"city\": \"qui dolor sed in est\",\n    \"state\": \"elit reprehenderit irure proident\",\n    \"zipCode\": \"officia enim qui\"\n  },\n  \"phoneNumber\": \"amet dolore commodo incididunt\",\n  \"ssn\": \"qui aute et est\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "accounts",
+      "item": [
+        {
+          "name": "Get Customer Accounts",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get Account Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    _.each(pm.response.json(), (item) => {",
+                  "        pm.expect(item.id).to.be.a(\"number\");",
+                  "        pm.expect(item.customerId).to.be.a(\"number\");",
+                  "        pm.expect(item.type).to.be.a(\"string\");",
+                  "        pm.expect(item.type).to.be.oneOf([\"CHECKING\", \"SAVINGS\", \"LOAN\"]);",
+                  "        pm.expect(item.balance).to.be.a(\"number\");",
+                  "    })",
+                  "});",
+                  "",
+                  "jsonData = pm.response.json();",
+                  "pm.environment.set(\"accountId\", jsonData[0].id);",
+                  "pm.environment.set(\"toAccountId\", jsonData[1].id);",
+                  "pm.environment.set(\"customerId\", jsonData[0].customerId);",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/customers/:customerId/accounts",
+              "host": ["{{baseUrl}}"],
+              "path": ["customers", ":customerId", "accounts"],
+              "variable": [
+                {
+                  "key": "customerId",
+                  "value": "12212",
+                  "description": "(Required) Customer's id"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/customers/:customerId/accounts",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["customers", ":customerId", "accounts"],
+                  "variable": [
+                    {
+                      "key": "customerId",
+                      "value": "99723787",
+                      "description": "(Required) Customer's id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 18444366,\n    \"customerId\": 65903069,\n    \"type\": \"CHECKING\",\n    \"balance\": 9476516.610609978\n  },\n  {\n    \"id\": -3556479,\n    \"customerId\": 68116629,\n    \"type\": \"CHECKING\",\n    \"balance\": -7545548.356055051\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get Account by Id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get Account Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.id).to.be.a(\"number\");",
+                  "    pm.expect(jsonData.customerId).to.be.a(\"number\");",
+                  "    pm.expect(jsonData.type).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.type).eqls(\"CHECKING\");",
+                  "    pm.expect(jsonData.balance).to.be.a(\"number\");",
+                  "});",
+                  "",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts/:accountId",
+              "host": ["{{baseUrl}}"],
+              "path": ["accounts", ":accountId"],
+              "variable": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Account id"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts/:accountId",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["accounts", ":accountId"],
+                  "variable": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787",
+                      "description": "(Required) Account id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": -5344905,\n  \"customerId\": -97755456,\n  \"type\": \"SAVINGS\",\n  \"balance\": 78020518.55485299\n}"
+            }
+          ]
+        },
+        {
+          "name": "Deposit funds",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Deposit Funds Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.expect(pm.response.text()).to.include(\"Successfully deposited\");",
+                  "});",
+                  "",
+                  "console.log(pm.response.text())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/deposit?accountId={{accountId}}&amount={{$randomPrice}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["deposit"],
+              "query": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Customer funds target account"
+                },
+                {
+                  "key": "amount",
+                  "value": "{{$randomPrice}}",
+                  "description": "(Required) Amount"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/deposit?accountId=99723787&amount=57911590.58801448",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["deposit"],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "57911590.58801448"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "\"in\""
+            }
+          ]
+        },
+        {
+          "name": "Transfer funds",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Transfer Funds Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.expect(pm.response.text()).to.include(\"Successfully transferred\");",
+                  "});",
+                  "",
+                  "console.log(pm.response.text())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/transfer?fromAccountId={{accountId}}&toAccountId={{toAccountId}}&amount={{$randomPrice}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["transfer"],
+              "query": [
+                {
+                  "key": "fromAccountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Customer funds source account"
+                },
+                {
+                  "key": "toAccountId",
+                  "value": "{{toAccountId}}",
+                  "description": "(Required) Customer funds target account"
+                },
+                {
+                  "key": "amount",
+                  "value": "{{$randomPrice}}",
+                  "description": "(Required) Amount"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/transfer?fromAccountId=99723787&toAccountId=99723787&amount=57911590.58801448",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["transfer"],
+                  "query": [
+                    {
+                      "key": "fromAccountId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "toAccountId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "57911590.58801448"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "\"in\""
+            }
+          ]
+        },
+        {
+          "name": "Withdraw funds",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Withdraw Funds Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.expect(pm.response.text()).to.include(\"Successfully withdrew\");",
+                  "});",
+                  "",
+                  "console.log(pm.response.text())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/withdraw?accountId={{accountId}}&amount={{$randomPrice}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["withdraw"],
+              "query": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Customer funds source account"
+                },
+                {
+                  "key": "amount",
+                  "value": "{{$randomPrice}}",
+                  "description": "(Required) Amount"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/withdraw?accountId=99723787&amount=57911590.58801448",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["withdraw"],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "57911590.58801448"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "\"in\""
+            }
+          ]
+        },
+        {
+          "name": "Pay bill",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Pay Bill Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.payeeName).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.amount).to.be.a(\"number\");",
+                  "    pm.expect(jsonData.accountId).to.be.a(\"number\");",
+                  "});",
+                  "",
+                  "console.log(pm.response.text())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"{{$randomFullName}}\",\n  \"address\": {\n    \"street\": \"{{$randomStreetName}}\",\n    \"city\": \"{{$randomCity}}\",\n    \"state\": \"{{$randomCountry}}\",\n    \"zipCode\": \"{{$randomCountryCode}}\"\n  },\n  \"phoneNumber\": \"{{$randomPhoneNumber}}\",\n  \"accountNumber\": {{accountId}}\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/billpay?accountId={{accountId}}&amount={{$randomPrice}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["billpay"],
+              "query": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Bill payment source account"
+                },
+                {
+                  "key": "amount",
+                  "value": "{{$randomPrice}}",
+                  "description": "(Required) Amount"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"name\": \"veniam aute aliquip\",\n  \"address\": {\n    \"street\": \"veniam aliquip dolore\",\n    \"city\": \"et incididunt\",\n    \"state\": \"enim officia Ut\",\n    \"zipCode\": \"culpa tempor\"\n  },\n  \"phoneNumber\": \"ad quis in\",\n  \"accountNumber\": -72585890\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/billpay?accountId=99723787&amount=57911590.58801448",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["billpay"],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "57911590.58801448"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"payeeName\": \"incididunt laboris dolor qui eiusmod\",\n  \"amount\": -1168156.4932409525,\n  \"accountId\": -60290873\n}"
+            }
+          ]
+        },
+        {
+          "name": "Request a loan",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Deposit Funds Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.accountId).to.be.a(\"number\");",
+                  "    pm.expect(jsonData.responseDate).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.loanProviderName).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.approved).to.be.a(\"boolean\");",
+                  "});",
+                  "",
+                  "",
+                  "pm.test(\"Loan Request Approved\", function(){",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.approved).eql(true);",
+                  "});",
+                  "",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/requestLoan?customerId={{customerId}}&amount={{$randomPrice}}&downPayment={{$randomPrice}}&fromAccountId={{accountId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["requestLoan"],
+              "query": [
+                {
+                  "key": "customerId",
+                  "value": "{{customerId}}",
+                  "description": "(Required) Customer's id"
+                },
+                {
+                  "key": "amount",
+                  "value": "{{$randomPrice}}",
+                  "description": "(Required) Amount"
+                },
+                {
+                  "key": "downPayment",
+                  "value": "{{$randomPrice}}",
+                  "description": "(Required) Downpayment for the loan"
+                },
+                {
+                  "key": "fromAccountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Customer funds source account"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/requestLoan?customerId=99723787&amount=57911590.58801448&downPayment=57911590.58801448&fromAccountId=99723787",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["requestLoan"],
+                  "query": [
+                    {
+                      "key": "customerId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "57911590.58801448"
+                    },
+                    {
+                      "key": "downPayment",
+                      "value": "57911590.58801448"
+                    },
+                    {
+                      "key": "fromAccountId",
+                      "value": "99723787"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"loanProviderName\": \"amet exercitation dolor\",\n  \"responseDate\": \"1988-08-06T04:07:35.722Z\",\n  \"approved\": false,\n  \"message\": \"sunt Lorem\",\n  \"accountId\": -44312977\n}"
+            }
+          ]
+        },
+        {
+          "name": "Create a new account",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Account Creation Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.accountId).to.be.a(\"number\");",
+                  "    pm.expect(jsonData.responseDate).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.loanProviderName).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.approved).to.be.a(\"boolean\");",
+                  "});",
+                  "",
+                  "// console.log(pm.response.json())",
+                  "",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/createAccount?customerId={{customerId}}&newAccountType=SAVINGS&fromAccountId={{accountId}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["createAccount"],
+              "query": [
+                {
+                  "key": "customerId",
+                  "value": "{{customerId}}",
+                  "description": "(Required) Customer's id"
+                },
+                {
+                  "key": "newAccountType",
+                  "value": "SAVINGS",
+                  "description": "(Required) Account type (CHECKING, SAVINGS, LOAN)"
+                },
+                {
+                  "key": "fromAccountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Customer funds source account"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/createAccount?customerId=99723787&newAccountType=99723787&fromAccountId=99723787",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["createAccount"],
+                  "query": [
+                    {
+                      "key": "customerId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "newAccountType",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "fromAccountId",
+                      "value": "99723787"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": -5344905,\n  \"customerId\": -97755456,\n  \"type\": \"SAVINGS\",\n  \"balance\": 78020518.55485299\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "transactions",
+      "item": [
+        {
+          "name": "Get the list of Transactions for the account",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get Transactions Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    _.each(pm.response.json(), (item) => {",
+                  "        pm.expect(item.id).to.be.a(\"number\");",
+                  "        pm.expect(item.accountId).to.be.a(\"number\");",
+                  "        pm.expect(item.type).to.be.a(\"string\");",
+                  "        pm.expect(item.type).to.be.oneOf([\"Debit\", \"Credit\"]);",
+                  "        pm.expect(item.date).to.be.a(\"string\");",
+                  "        pm.expect(item.amount).to.be.a(\"number\");",
+                  "        pm.expect(item.description).to.be.a(\"string\");",
+                  "    })",
+                  "});",
+                  "",
+                  "jsonData = pm.response.json();",
+                  "pm.environment.set(\"txAmount\", jsonData[0].amount);",
+                  "pm.environment.set(\"txId\", jsonData[0].id);",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts/:accountId/transactions",
+              "host": ["{{baseUrl}}"],
+              "path": ["accounts", ":accountId", "transactions"],
+              "variable": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Account id"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts/:accountId/transactions",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["accounts", ":accountId", "transactions"],
+                  "variable": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787",
+                      "description": "(Required) Account id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 3699067,\n    \"accountId\": 53802776,\n    \"type\": \"Credit\",\n    \"date\": \"2020-10-11T17:41:24.962Z\",\n    \"amount\": 65467241.33869457,\n    \"description\": \"dolor dolore ad est\"\n  },\n  {\n    \"id\": -51999148,\n    \"accountId\": 88182463,\n    \"type\": \"Debit\",\n    \"date\": \"1979-06-04T03:50:11.593Z\",\n    \"amount\": -3004164.1957631707,\n    \"description\": \"in\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Create transactions by amount for account",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get Transactions Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    _.each(pm.response.json(), (item) => {",
+                  "        pm.expect(item.id).to.be.a(\"number\");",
+                  "        pm.expect(item.accountId).to.be.a(\"number\");",
+                  "        pm.expect(item.type).to.be.a(\"string\");",
+                  "        pm.expect(item.type).to.be.oneOf([\"Debit\", \"Credit\"]);",
+                  "        pm.expect(item.date).to.be.a(\"string\");",
+                  "        pm.expect(item.amount).to.be.a(\"number\");",
+                  "        pm.expect(item.description).to.be.a(\"string\");",
+                  "    })",
+                  "});",
+                  "",
+                  "jsonData = pm.response.json();",
+                  "pm.environment.set(\"txAmount\", jsonData[0].amount);",
+                  "console.log(pm.response.json())",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts/:accountId/transactions/amount/:amount",
+              "host": ["{{baseUrl}}"],
+              "path": [
+                "accounts",
+                ":accountId",
+                "transactions",
+                "amount",
+                ":amount"
+              ],
+              "variable": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Account id"
+                },
+                {
+                  "key": "amount",
+                  "value": "{{txAmount}}",
+                  "description": "(Required) Amount"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts/:accountId/transactions/amount/:amount",
+                  "host": ["{{baseUrl}}"],
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "transactions",
+                    "amount",
+                    ":amount"
+                  ],
+                  "variable": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787",
+                      "description": "(Required) Account id"
+                    },
+                    {
+                      "key": "amount",
+                      "value": "57911590.58801448",
+                      "description": "(Required) Amount"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 3699067,\n    \"accountId\": 53802776,\n    \"type\": \"Credit\",\n    \"date\": \"2020-10-11T17:41:24.962Z\",\n    \"amount\": 65467241.33869457,\n    \"description\": \"dolor dolore ad est\"\n  },\n  {\n    \"id\": -51999148,\n    \"accountId\": 88182463,\n    \"type\": \"Debit\",\n    \"date\": \"1979-06-04T03:50:11.593Z\",\n    \"amount\": -3004164.1957631707,\n    \"description\": \"in\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Fetch transactions by month and type for account",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get Transactions Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    _.each(pm.response.json(), (item) => {",
+                  "        pm.expect(item.id).to.be.a(\"number\");",
+                  "        pm.expect(item.accountId).to.be.a(\"number\");",
+                  "        pm.expect(item.type).to.be.a(\"string\");",
+                  "        pm.expect(item.type).to.be.oneOf([\"Debit\", \"Credit\"]);",
+                  "        pm.expect(item.date).to.be.a(\"string\");",
+                  "        pm.expect(item.amount).to.be.a(\"number\");",
+                  "        pm.expect(item.description).to.be.a(\"string\");",
+                  "    })",
+                  "});",
+                  "",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [""],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts/:accountId/transactions/month/:month/type/:type",
+              "host": ["{{baseUrl}}"],
+              "path": [
+                "accounts",
+                ":accountId",
+                "transactions",
+                "month",
+                ":month",
+                "type",
+                ":type"
+              ],
+              "variable": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Account id"
+                },
+                {
+                  "key": "month",
+                  "value": "",
+                  "description": "(Required) Month to use for the search range"
+                },
+                {
+                  "key": "type",
+                  "value": "Credit",
+                  "description": "(Required) Transaction type (CREDIT, DEBIT)"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts/:accountId/transactions/month/:month/type/:type",
+                  "host": ["{{baseUrl}}"],
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "transactions",
+                    "month",
+                    ":month",
+                    "type",
+                    ":type"
+                  ],
+                  "variable": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787",
+                      "description": "(Required) Account id"
+                    },
+                    {
+                      "key": "month",
+                      "value": "in",
+                      "description": "(Required) Month to use for the search range"
+                    },
+                    {
+                      "key": "type",
+                      "value": "in",
+                      "description": "(Required) Transaction type (CREDIT, DEBIT)"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 3699067,\n    \"accountId\": 53802776,\n    \"type\": \"Credit\",\n    \"date\": \"2020-10-11T17:41:24.962Z\",\n    \"amount\": 65467241.33869457,\n    \"description\": \"dolor dolore ad est\"\n  },\n  {\n    \"id\": -51999148,\n    \"accountId\": 88182463,\n    \"type\": \"Debit\",\n    \"date\": \"1979-06-04T03:50:11.593Z\",\n    \"amount\": -3004164.1957631707,\n    \"description\": \"in\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Fetch transactions for date range for account",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get Transactions Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    _.each(pm.response.json(), (item) => {",
+                  "        pm.expect(item.id).to.be.a(\"number\");",
+                  "        pm.expect(item.accountId).to.be.a(\"number\");",
+                  "        pm.expect(item.type).to.be.a(\"string\");",
+                  "        pm.expect(item.type).to.be.oneOf([\"Debit\", \"Credit\"]);",
+                  "        pm.expect(item.date).to.be.a(\"string\");",
+                  "        pm.expect(item.amount).to.be.a(\"number\");",
+                  "        pm.expect(item.description).to.be.a(\"string\");",
+                  "    })",
+                  "});",
+                  "",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            },
+            {
+              "listen": "prerequest",
+              "script": {
+                "exec": [
+                  "var moment = require('moment');",
+                  "pm.environment.set('currentDate', moment().format((\"MM-DD-YYYY\")));"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts/:accountId/transactions/fromDate/:fromDate/toDate/:toDate",
+              "host": ["{{baseUrl}}"],
+              "path": [
+                "accounts",
+                ":accountId",
+                "transactions",
+                "fromDate",
+                ":fromDate",
+                "toDate",
+                ":toDate"
+              ],
+              "variable": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Account id"
+                },
+                {
+                  "key": "fromDate",
+                  "value": "01-01-2022",
+                  "description": "(Required) Search starting date"
+                },
+                {
+                  "key": "toDate",
+                  "value": "{{currentDate}}",
+                  "description": "(Required) Search ending date"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts/:accountId/transactions/fromDate/:fromDate/toDate/:toDate",
+                  "host": ["{{baseUrl}}"],
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "transactions",
+                    "fromDate",
+                    ":fromDate",
+                    "toDate",
+                    ":toDate"
+                  ],
+                  "variable": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787",
+                      "description": "(Required) Account id"
+                    },
+                    {
+                      "key": "fromDate",
+                      "value": "in",
+                      "description": "(Required) Search starting date"
+                    },
+                    {
+                      "key": "toDate",
+                      "value": "in",
+                      "description": "(Required) Search ending date"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 3699067,\n    \"accountId\": 53802776,\n    \"type\": \"Credit\",\n    \"date\": \"2020-10-11T17:41:24.962Z\",\n    \"amount\": 65467241.33869457,\n    \"description\": \"dolor dolore ad est\"\n  },\n  {\n    \"id\": -51999148,\n    \"accountId\": 88182463,\n    \"type\": \"Debit\",\n    \"date\": \"1979-06-04T03:50:11.593Z\",\n    \"amount\": -3004164.1957631707,\n    \"description\": \"in\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Fetch transactions for a specific date for account",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get Transactions Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    _.each(pm.response.json(), (item) => {",
+                  "        pm.expect(item.id).to.be.a(\"number\");",
+                  "        pm.expect(item.accountId).to.be.a(\"number\");",
+                  "        pm.expect(item.type).to.be.a(\"string\");",
+                  "        pm.expect(item.type).to.be.oneOf([\"Debit\", \"Credit\"]);",
+                  "        pm.expect(item.date).to.be.a(\"string\");",
+                  "        pm.expect(item.amount).to.be.a(\"number\");",
+                  "        pm.expect(item.description).to.be.a(\"string\");",
+                  "    })",
+                  "});",
+                  "",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/accounts/:accountId/transactions/onDate/:onDate",
+              "host": ["{{baseUrl}}"],
+              "path": [
+                "accounts",
+                ":accountId",
+                "transactions",
+                "onDate",
+                ":onDate"
+              ],
+              "variable": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Account id"
+                },
+                {
+                  "key": "onDate",
+                  "value": "{{currentDate}}",
+                  "description": "(Required) Search specific date"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/accounts/:accountId/transactions/onDate/:onDate",
+                  "host": ["{{baseUrl}}"],
+                  "path": [
+                    "accounts",
+                    ":accountId",
+                    "transactions",
+                    "onDate",
+                    ":onDate"
+                  ],
+                  "variable": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787",
+                      "description": "(Required) Account id"
+                    },
+                    {
+                      "key": "onDate",
+                      "value": "in",
+                      "description": "(Required) Search specific date"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"id\": 3699067,\n    \"accountId\": 53802776,\n    \"type\": \"Credit\",\n    \"date\": \"2020-10-11T17:41:24.962Z\",\n    \"amount\": 65467241.33869457,\n    \"description\": \"dolor dolore ad est\"\n  },\n  {\n    \"id\": -51999148,\n    \"accountId\": 88182463,\n    \"type\": \"Debit\",\n    \"date\": \"1979-06-04T03:50:11.593Z\",\n    \"amount\": -3004164.1957631707,\n    \"description\": \"in\"\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get the transaction for the id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get Transactions Successful\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    const jsonData = pm.response.json();",
+                  "    pm.expect(jsonData.id).to.be.a(\"number\");",
+                  "    pm.expect(jsonData.accountId).to.be.a(\"number\");",
+                  "    pm.expect(jsonData.type).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.type).to.be.oneOf([\"Debit\", \"Credit\"]);",
+                  "    pm.expect(jsonData.date).to.be.a(\"string\");",
+                  "    pm.expect(jsonData.amount).to.be.a(\"number\");",
+                  "    pm.expect(jsonData.description).to.be.a(\"string\");",
+                  "});",
+                  "",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/transactions/:transactionId",
+              "host": ["{{baseUrl}}"],
+              "path": ["transactions", ":transactionId"],
+              "variable": [
+                {
+                  "key": "transactionId",
+                  "value": "{{txId}}",
+                  "description": "(Required) Unique identifier for the transaction"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/transactions/:transactionId",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["transactions", ":transactionId"],
+                  "variable": [
+                    {
+                      "key": "transactionId",
+                      "value": "99723787",
+                      "description": "(Required) Unique identifier for the transaction"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": 79575351,\n  \"accountId\": -30793259,\n  \"type\": \"Debit\",\n  \"date\": \"1943-09-18T15:32:01.341Z\",\n  \"amount\": -84137065.92922017,\n  \"description\": \"est culpa\"\n}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "customers",
+      "item": [
+        {
+          "name": "Get Customer Details",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Get Customer Details Successful\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response must be valid\", function(){\r",
+                  "    pm.response.to.be.ok;\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response values must match datatypes\", function(){\r",
+                  "    const jsonData = pm.response.json();\r",
+                  "    pm.expect(jsonData.id).to.be.a(\"number\");\r",
+                  "    pm.expect(jsonData.firstName).to.be.a(\"string\");\r",
+                  "    pm.expect(jsonData.lastName).to.be.a(\"string\");\r",
+                  "    pm.expect(jsonData.address.street).to.be.a(\"string\");\r",
+                  "    pm.expect(jsonData.address.city).to.be.a(\"string\");\r",
+                  "    pm.expect(jsonData.address.state).to.be.a(\"string\");\r",
+                  "    pm.expect(jsonData.address.zipCode).to.be.a(\"string\");\r",
+                  "    pm.expect(jsonData.phoneNumber).to.be.a(\"string\");\r",
+                  "    pm.expect(jsonData.ssn).to.be.a(\"string\");\r",
+                  "});\r",
+                  "\r",
+                  "console.log(pm.response.json())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/customers/:customerId",
+              "host": ["{{baseUrl}}"],
+              "path": ["customers", ":customerId"],
+              "variable": [
+                {
+                  "key": "customerId",
+                  "value": "{{customerId}}",
+                  "description": "(Required) Customer's id"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/customers/:customerId",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["customers", ":customerId"],
+                  "variable": [
+                    {
+                      "key": "customerId",
+                      "value": "99723787",
+                      "description": "(Required) Customer's id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"id\": -38793593,\n  \"firstName\": \"adipisicing velit\",\n  \"lastName\": \"adipisicing consectetur do \",\n  \"address\": {\n    \"street\": \"cillum incididunt nulla in\",\n    \"city\": \"qui dolor sed in est\",\n    \"state\": \"elit reprehenderit irure proident\",\n    \"zipCode\": \"officia enim qui\"\n  },\n  \"phoneNumber\": \"amet dolore commodo incididunt\",\n  \"ssn\": \"qui aute et est\"\n}"
+            }
+          ]
+        },
+        {
+          "name": "Update customer information",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Customer Info Update Successful\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response must be valid\", function(){\r",
+                  "    pm.response.to.be.ok;\r",
+                  "    pm.expect(pm.response.text()).to.include(\"Successfully updated customer profile\");\r",
+                  "});\r",
+                  "\r",
+                  "console.log(pm.response.text())"
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/customers/update/:customerId?firstName={{$randomFirstName}}&lastName={{$randomLastName}}&street={{$randomStreetName}}&city={{$randomCity}}&state={{$randomCountry}}&zipCode={{$randomCountryCode}}&phoneNumber={{$randomPhoneNumber}}&ssn={{$randomPhoneNumber}}&username={{$randomAbbreviation}}&password={{$randomAlphaNumeric}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["customers", "update", ":customerId"],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "{{$randomFirstName}}",
+                  "description": "(Required) Customer's given (first) name"
+                },
+                {
+                  "key": "lastName",
+                  "value": "{{$randomLastName}}",
+                  "description": "(Required) Customer's surname (last name)"
+                },
+                {
+                  "key": "street",
+                  "value": "{{$randomStreetName}}",
+                  "description": "(Required) Street Address including bilding number and apartment (if any)"
+                },
+                {
+                  "key": "city",
+                  "value": "{{$randomCity}}",
+                  "description": "(Required) City"
+                },
+                {
+                  "key": "state",
+                  "value": "{{$randomCountry}}",
+                  "description": "(Required) US state or Region name"
+                },
+                {
+                  "key": "zipCode",
+                  "value": "{{$randomCountryCode}}",
+                  "description": "(Required) ZIP code or province id"
+                },
+                {
+                  "key": "phoneNumber",
+                  "value": "{{$randomPhoneNumber}}",
+                  "description": "(Required) Contact Phone Number"
+                },
+                {
+                  "key": "ssn",
+                  "value": "{{$randomPhoneNumber}}",
+                  "description": "(Required) Social Security Number"
+                },
+                {
+                  "key": "username",
+                  "value": "{{$randomAbbreviation}}",
+                  "description": "(Required) Customer's user name"
+                },
+                {
+                  "key": "password",
+                  "value": "{{$randomAlphaNumeric}}",
+                  "description": "(Required) Customer's password"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "customerId",
+                  "value": "{{customerId}}",
+                  "description": "(Required) Customer's id"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/customers/update/:customerId?firstName=in&lastName=in&street=in&city=in&state=in&zipCode=in&phoneNumber=in&ssn=in&username=in&password=in",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["customers", "update", ":customerId"],
+                  "query": [
+                    {
+                      "key": "firstName",
+                      "value": "in"
+                    },
+                    {
+                      "key": "lastName",
+                      "value": "in"
+                    },
+                    {
+                      "key": "street",
+                      "value": "in"
+                    },
+                    {
+                      "key": "city",
+                      "value": "in"
+                    },
+                    {
+                      "key": "state",
+                      "value": "in"
+                    },
+                    {
+                      "key": "zipCode",
+                      "value": "in"
+                    },
+                    {
+                      "key": "phoneNumber",
+                      "value": "in"
+                    },
+                    {
+                      "key": "ssn",
+                      "value": "in"
+                    },
+                    {
+                      "key": "username",
+                      "value": "in"
+                    },
+                    {
+                      "key": "password",
+                      "value": "in"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "customerId",
+                      "value": "99723787",
+                      "description": "(Required) Customer's id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "\"in\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "positions/{positionId}",
+      "item": [
+        {
+          "name": "Get Positions for Customer",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 200\", function() {",
+                  "    pm.response.to.have.status(200);",
+                  "});",
+                  "",
+                  "pm.test(\"Response must be valid\", function(){",
+                  "    pm.response.to.be.ok;",
+                  "    pm.response.to.be.withBody;",
+                  "    pm.response.to.be.json;",
+                  "});",
+                  "",
+                  "pm.test(\"Response values must match datatypes\", function(){",
+                  "    _.each(pm.response.json(), (item) => {",
+                  "        pm.expect(item.positionId).to.be.a(\"number\");",
+                  "        pm.expect(item.customerId).to.be.a(\"number\");",
+                  "        pm.expect(item.name).to.be.a(\"string\");",
+                  "        pm.expect(item.symbol).to.be.a(\"string\");",
+                  "        pm.expect(item.shares).to.be.a(\"number\");",
+                  "        // pm.expect(item.purchasePrie).to.be.a(\"decimal\");",
+                  "        pm.expect(item.purchasePrie).to.not.eql(null);",
+                  "    })",
+                  "});",
+                  "",
+                  "const jsonData = pm.response.json();",
+                  "pm.environment.set(\"positionId\", jsonData[0].positionId);",
+                  "pm.environment.set(\"stockName\", jsonData[0].name);",
+                  "pm.environment.set(\"stockSymbol\", jsonData[0].symbol);",
+                  "pm.environment.set(\"sharesCount\", jsonData[0].shares);",
+                  "console.log(pm.response.json())",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/customers/:customerId/positions",
+              "host": ["{{baseUrl}}"],
+              "path": ["customers", ":customerId", "positions"],
+              "variable": [
+                {
+                  "key": "customerId",
+                  "value": "{{customerId}}",
+                  "description": "(Required) Customer's id"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/customers/:customerId/positions",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["customers", ":customerId", "positions"],
+                  "variable": [
+                    {
+                      "key": "customerId",
+                      "value": "99723787",
+                      "description": "(Required) Customer's id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"positionId\": 72503208,\n    \"customerId\": 23921632,\n    \"name\": \"culpa reprehenderit dolor\",\n    \"symbol\": \"ut culpa nisi consectetur sunt\",\n    \"shares\": 32957617,\n    \"purchasePrice\": -15565524.986468032\n  },\n  {\n    \"positionId\": 25285594,\n    \"customerId\": -34236598,\n    \"name\": \"culpa voluptate\",\n    \"symbol\": \"tempor do\",\n    \"shares\": -70833895,\n    \"purchasePrice\": 79399183.33930057\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Get Position by id",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 200\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response must be valid\", function(){\r",
+                  "    pm.response.to.be.ok;\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response values must match datatypes\", function(){\r",
+                  "    const jsonData = pm.response.json();\r",
+                  "        pm.expect(jsonData.positionId).to.be.a(\"number\");\r",
+                  "        pm.expect(jsonData.customerId).to.be.a(\"number\");\r",
+                  "        pm.expect(jsonData.name).to.be.a(\"string\");\r",
+                  "        pm.expect(jsonData.symbol).to.be.a(\"string\");\r",
+                  "        pm.expect(jsonData.shares).to.be.a(\"number\");\r",
+                  "        // pm.expect(item.purchasePrie).to.be.a(\"decimal\");\r",
+                  "        pm.expect(jsonData.purchasePrie).to.not.eql(null);\r",
+                  "});\r",
+                  "\r",
+                  "console.log(pm.response.json())\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/positions/:positionId",
+              "host": ["{{baseUrl}}"],
+              "path": ["positions", ":positionId"],
+              "variable": [
+                {
+                  "key": "positionId",
+                  "value": "{{positionId}}",
+                  "description": "(Required) Unique identifier for the position"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/positions/:positionId",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["positions", ":positionId"],
+                  "variable": [
+                    {
+                      "key": "positionId",
+                      "value": "99723787",
+                      "description": "(Required) Unique identifier for the position"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "{\n  \"positionId\": 37656653,\n  \"customerId\": -15684478,\n  \"name\": \"do quis\",\n  \"symbol\": \"quis aute consequat proident\",\n  \"shares\": -20400091,\n  \"purchasePrice\": -43415792.55422045\n}"
+            }
+          ]
+        },
+        {
+          "name": "Get Position history by id within a date range",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 200\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response must be valid\", function(){\r",
+                  "    pm.response.to.be.ok;\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response values must match datatypes\", function(){\r",
+                  "    const jsonData = pm.response.json();\r",
+                  "        pm.expect(jsonData.positionId).to.be.a(\"number\");\r",
+                  "        pm.expect(jsonData.customerId).to.be.a(\"number\");\r",
+                  "        pm.expect(jsonData.name).to.be.a(\"string\");\r",
+                  "        pm.expect(jsonData.symbol).to.be.a(\"string\");\r",
+                  "        pm.expect(jsonData.shares).to.be.a(\"number\");\r",
+                  "        // pm.expect(item.purchasePrie).to.be.a(\"decimal\");\r",
+                  "        pm.expect(jsonData.purchasePrie).to.not.eql(null);\r",
+                  "});\r",
+                  "\r",
+                  "// console.log(pm.response.json())\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/xml"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/positions/:positionId/:startDate/:endDate",
+              "host": ["{{baseUrl}}"],
+              "path": ["positions", ":positionId", ":startDate", ":endDate"],
+              "variable": [
+                {
+                  "key": "positionId",
+                  "value": "{{positionId}}",
+                  "description": "(Required) Unique identifier for the position"
+                },
+                {
+                  "key": "startDate",
+                  "value": "{{currentDate}}",
+                  "description": "(Required) Search starting date"
+                },
+                {
+                  "key": "endDate",
+                  "value": "{{currentDate}}",
+                  "description": "(Required) Search ending date"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/positions/:positionId/:startDate/:endDate",
+                  "host": ["{{baseUrl}}"],
+                  "path": [
+                    "positions",
+                    ":positionId",
+                    ":startDate",
+                    ":endDate"
+                  ],
+                  "variable": [
+                    {
+                      "key": "positionId",
+                      "value": "99723787",
+                      "description": "(Required) Unique identifier for the position"
+                    },
+                    {
+                      "key": "startDate",
+                      "value": "in",
+                      "description": "(Required) Search starting date"
+                    },
+                    {
+                      "key": "endDate",
+                      "value": "in",
+                      "description": "(Required) Search ending date"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"symbol\": \"esse nostrud\",\n    \"date\": \"1984-06-03T09:48:19.702Z\",\n    \"closingPrice\": -46334266.45684961\n  },\n  {\n    \"symbol\": \"temp\",\n    \"date\": \"1994-07-04T14:46:11.735Z\",\n    \"closingPrice\": -19667568.7272927\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Buy a Position",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 200\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response must be valid\", function(){\r",
+                  "    pm.response.to.be.ok;\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response values must match datatypes\", function(){\r",
+                  "    _.each(pm.response.json(), (item) => {\r",
+                  "        pm.expect(item.positionId).to.be.a(\"number\");\r",
+                  "        pm.expect(item.customerId).to.be.a(\"number\");\r",
+                  "        pm.expect(item.name).to.be.a(\"string\");\r",
+                  "        pm.expect(item.symbol).to.be.a(\"string\");\r",
+                  "        pm.expect(item.shares).to.be.a(\"number\");\r",
+                  "        // pm.expect(item.purchasePrie).to.be.a(\"decimal\");\r",
+                  "        pm.expect(item.purchasePrie).to.not.eql(null);\r",
+                  "    })\r",
+                  "});\r",
+                  "\r",
+                  "console.log(pm.response.json())\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/customers/:customerId/buyPosition?accountId={{accountId}}&name={{$randomCompanyName}}&symbol={{$randomAbbreviation}}&shares=10&pricePerShare=5.99",
+              "host": ["{{baseUrl}}"],
+              "path": ["customers", ":customerId", "buyPosition"],
+              "query": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Customer funds source account"
+                },
+                {
+                  "key": "name",
+                  "value": "{{$randomCompanyName}}",
+                  "description": "(Required) Instrument's Name"
+                },
+                {
+                  "key": "symbol",
+                  "value": "{{$randomAbbreviation}}",
+                  "description": "(Required) Instrument's exchange symbol"
+                },
+                {
+                  "key": "shares",
+                  "value": "10",
+                  "description": "(Required) number of shares"
+                },
+                {
+                  "key": "pricePerShare",
+                  "value": "5.99",
+                  "description": "(Required) Price of each share"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "customerId",
+                  "value": "{{customerId}}",
+                  "description": "(Required) Customer's id"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/customers/:customerId/buyPosition?accountId=99723787&name=in&symbol=in&shares=99723787&pricePerShare=57911590.58801448",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["customers", ":customerId", "buyPosition"],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "name",
+                      "value": "in"
+                    },
+                    {
+                      "key": "symbol",
+                      "value": "in"
+                    },
+                    {
+                      "key": "shares",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "pricePerShare",
+                      "value": "57911590.58801448"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "customerId",
+                      "value": "99723787",
+                      "description": "(Required) Customer's id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"positionId\": 72503208,\n    \"customerId\": 23921632,\n    \"name\": \"culpa reprehenderit dolor\",\n    \"symbol\": \"ut culpa nisi consectetur sunt\",\n    \"shares\": 32957617,\n    \"purchasePrice\": -15565524.986468032\n  },\n  {\n    \"positionId\": 25285594,\n    \"customerId\": -34236598,\n    \"name\": \"culpa voluptate\",\n    \"symbol\": \"tempor do\",\n    \"shares\": -70833895,\n    \"purchasePrice\": 79399183.33930057\n  }\n]"
+            }
+          ]
+        },
+        {
+          "name": "Sell a Position",
+          "event": [
+            {
+              "listen": "test",
+              "script": {
+                "exec": [
+                  "pm.test(\"Response should be 200\", function() {\r",
+                  "    pm.response.to.have.status(200);\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response must be valid\", function(){\r",
+                  "    pm.response.to.be.ok;\r",
+                  "    pm.response.to.be.withBody;\r",
+                  "    pm.response.to.be.json;\r",
+                  "});\r",
+                  "\r",
+                  "pm.test(\"Response values must match datatypes\", function(){\r",
+                  "    _.each(pm.response.json(), (item) => {\r",
+                  "        pm.expect(item.positionId).to.be.a(\"number\");\r",
+                  "        pm.expect(item.customerId).to.be.a(\"number\");\r",
+                  "        pm.expect(item.name).to.be.a(\"string\");\r",
+                  "        pm.expect(item.symbol).to.be.a(\"string\");\r",
+                  "        pm.expect(item.shares).to.be.a(\"number\");\r",
+                  "        // pm.expect(item.purchasePrie).to.be.a(\"decimal\");\r",
+                  "        pm.expect(item.purchasePrie).to.not.eql(null);\r",
+                  "    })\r",
+                  "});\r",
+                  "\r",
+                  "console.log(pm.response.json())\r",
+                  ""
+                ],
+                "type": "text/javascript"
+              }
+            }
+          ],
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/customers/:customerId/sellPosition?accountId={{accountId}}&positionId={{positionId}}&shares={{sharesCount}}&pricePerShare={{$randomPrice}}",
+              "host": ["{{baseUrl}}"],
+              "path": ["customers", ":customerId", "sellPosition"],
+              "query": [
+                {
+                  "key": "accountId",
+                  "value": "{{accountId}}",
+                  "description": "(Required) Customer funds target account"
+                },
+                {
+                  "key": "positionId",
+                  "value": "{{positionId}}",
+                  "description": "(Required) Unique identifier for the position"
+                },
+                {
+                  "key": "shares",
+                  "value": "{{sharesCount}}",
+                  "description": "(Required) number of shares"
+                },
+                {
+                  "key": "pricePerShare",
+                  "value": "{{$randomPrice}}",
+                  "description": "(Required) Price of each share"
+                }
+              ],
+              "variable": [
+                {
+                  "key": "customerId",
+                  "value": "{{customerId}}",
+                  "description": "(Required) Customer's id"
+                }
+              ]
+            }
+          },
+          "response": [
+            {
+              "name": "successful operation",
+              "originalRequest": {
+                "method": "POST",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/customers/:customerId/sellPosition?accountId=99723787&positionId=99723787&shares=99723787&pricePerShare=57911590.58801448",
+                  "host": ["{{baseUrl}}"],
+                  "path": ["customers", ":customerId", "sellPosition"],
+                  "query": [
+                    {
+                      "key": "accountId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "positionId",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "shares",
+                      "value": "99723787"
+                    },
+                    {
+                      "key": "pricePerShare",
+                      "value": "57911590.58801448"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "key": "customerId",
+                      "value": "99723787",
+                      "description": "(Required) Customer's id"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "body": "[\n  {\n    \"positionId\": 72503208,\n    \"customerId\": 23921632,\n    \"name\": \"culpa reprehenderit dolor\",\n    \"symbol\": \"ut culpa nisi consectetur sunt\",\n    \"shares\": 32957617,\n    \"purchasePrice\": -15565524.986468032\n  },\n  {\n    \"positionId\": 25285594,\n    \"customerId\": -34236598,\n    \"name\": \"culpa voluptate\",\n    \"symbol\": \"tempor do\",\n    \"shares\": -70833895,\n    \"purchasePrice\": 79399183.33930057\n  }\n]"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "exec": [""]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "host",
+      "value": "http://192.168.0.182:8080",
+      "type": "string"
+    },
+    {
+      "key": "baseUrl",
+      "value": "{{host}}/parabank/services/bank",
+      "type": "string"
+    }
+  ]
+}
